@@ -1,0 +1,54 @@
+body {
+    background:linear-gradient(to bottom, #282626, #000000, #282626);
+    height: 100vh;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* === SEMATIC LINKS=== */
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*=== HEADER  ===*/
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #fff;
+    padding: 0.5em;
+    margin-top: 2em;
+    
+}
+.navSection {
+    flex: 1;
+    flex-direction: column;
+    float: right;
+}
+
+.emailLink {
+    flex: 1;
+    text-align: center;
+}
+.logolink {
+    flex: 1;
+}
+
+.navSection ul {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+.navSection ul li {
+    padding: 0.2em;
+    margin: 0.5em;
+    background: goldenrod;
+}
