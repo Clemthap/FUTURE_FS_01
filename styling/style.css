@@ -35,7 +35,7 @@ a {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: solid #808080 0.2em;
+    /* border: solid #808080 0.2em; */
     margin-bottom: 0em;
 }
 #logo-link, #email-link, #nav-links{
