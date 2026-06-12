@@ -40,9 +40,9 @@ a {
 }
 #logo-link, #email-link, #nav-links{
     flex: 1;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     text-align: center;
-    /* border: solid #808080 0.2em; */
+    border: solid #808080 0.2em;
 }
 #logo-link {
     padding-left: 20px;
@@ -50,17 +50,20 @@ a {
 
 #nav-links ul{
     display: flex;
-    /* border: solid #808080 0.2em; */
+    border: solid #808080 0.2em;
     margin-top: 2em;
     list-style: none;
 }
 #nav-links ul li {
-    box-sizing: border-box;
+    box-sizing:content-box;
     border: solid #808080 0.2em;
     border-radius: 0.4em;
-    padding: 0.5em 1em;
+    padding: 0.5em 2em;
     margin: 0em 0.4em;
     animation: UpandDown 3s ease-in-out infinite alternate-reverse both;
+}
+#nav-links img {
+    display: none;
 }
 #nav-links ul li:hover {
     background-color: #808080;
@@ -81,9 +84,12 @@ a {
     text-align: justify;
     box-sizing: border-box;
     letter-spacing: 2px;
-    /* border: solid #ffffff 0.2em; */
+    border: solid #ffffff 0.2em;
     margin: 20px 0px;
      height: 400px;
+}
+.left-description p {
+    text-align: center;
 }
 .contacts {
     width: 100%;
