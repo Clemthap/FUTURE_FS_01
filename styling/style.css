@@ -267,6 +267,9 @@ footer{
 }
 
 @media(max-width:768px){
+    .hero {
+        margin-top: -4em;
+    }
     .logo {
         display: none;
     }
@@ -294,6 +297,10 @@ footer{
         border-radius:20%;
         animation: float 1s ease-in-out  infinite alternate both;
     }
+    .skill-card img {
+        display: none;
+    }
+    
     @keyframes float {
     0% {
         transform: translateY(-5px);
