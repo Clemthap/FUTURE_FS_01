@@ -57,8 +57,9 @@ section{
 }
 
 .logo{
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight:bold;
+
 }
 
 .nav-links{
@@ -106,6 +107,30 @@ section{
 
 .hero-text h2{
     margin:15px 0;
+    /* min-height: 2em;
+    transition: opacity 0.3s ease;
+    color: #667eea; */
+    animation: changeText 3s infinite alternate both;
+}
+/* .hero-text h2::after {
+    content: '.';
+    animation: blick 0.8s infinite;
+}
+@keyframes blick {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    } 
+} */
+@keyframes changeText {
+    0% {
+        color: #fff;
+    }
+    100% {
+        color: #616670;
+    }
 }
 
 .hero-image img{
@@ -300,7 +325,6 @@ footer{
     .skill-card img {
         display: none;
     }
-    
     @keyframes float {
     0% {
         transform: translateY(-5px);
@@ -330,6 +354,24 @@ footer{
         flex-wrap:wrap;
         justify-content:center;
     }
+    #btnBot, #btnTop{
+        display: none;
+    }
+
+    /* For clock */
+    .clock-wrapper {
+    display: flex;
+    font-size: 10px;
+    gap: 2px;
+    padding: 0.2em 0.5em;
+    margin: 0em;
+    border: 1px solid #2563eb;
+    background-color: #0c1b3a;
+    border-radius: 2px;
+    }
+    #date-display, #location-display, #timezone-display  {
+        display: none;
+    }
 }
 
 /* TypingEffect.css */
@@ -354,7 +396,7 @@ footer{
     position: fixed;
     border: none;
     background-color: #FFF;
-    color: #0d1117;
+    color: #10378d;
     padding: 5px 10px;
     border-radius: 0.5em;
     bottom:20px;
@@ -380,7 +422,14 @@ footer{
 }
 #btnTop:hover {
     color: #fff;
-    background-color: #0d1117;
+    background-color: #10378d;
     border: 2px solid #fff;
     padding: 3px 8px ;
+}
+
+/* Clock related */
+.clock-wrapper {
+    display: flex;
+    font-size: 10px;
+    gap: 4px;
 }
