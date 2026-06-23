@@ -28,6 +28,10 @@ section{
     /* timeline-trigger: --trigger view entry 100% exit 0%;
     animation-trigger: --trigger play-forward play-backwards; */
 }
+/* section:active {
+    transform: translateX(50px);
+    transition: 2s;
+} */
 @keyframes fade-section-in {
     0% {
         opacity: 0.5;
@@ -181,7 +185,11 @@ section{
     background:#58a6ff;
     color:white;
 }
-
+.btnDownLoad button:active {
+    background-color: #fff1;
+    color: #58a6ff;
+}
+ 
 /* About section */
 
 .card{
@@ -318,17 +326,34 @@ footer{
         padding-bottom: 0.6em ;
         border-bottom:solid #10378d 0.5em;
     }
-    .navbar:hover {
+    /* .navbar:hover {
         background-color: #58a6ff;
         opacity: 0.9;
-    }
-    .nav-links a:hover {
-        color: #0d1117;
-    }
+    } */
+     /* .nav-links a {
+        transform: transform 1s;
+     }
+    .nav-links a:active { 
+        /* active for element when pressed
+        background-color: #0c1b3a;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        padding: 0.4em;
+        transform: rotate(45deg); translate(0,-10px);
+    } */ 
     .hero-image img {
         width:200px;
         border-radius:20%;
-        animation: float 1s ease-in-out  infinite alternate both;
+        animation: float 1s ease-in-out infinite alternate both;
+    }
+    .hero-image {
+        transform: scale(1) translate(0,0);
+        transition: transform 3s;
+    }
+    .hero-image:hover {
+        transform: scale(1.5) translate(0,20px);
+        transition: transform 3s;
     }
     .skill-card img {
         display: none;
@@ -336,16 +361,17 @@ footer{
     @keyframes float {
     0% {
         transform: translateY(-5px);
-        /* transform: rotate(5deg); */
+        transform: rotate(5deg);
         transition: all 1s;
         box-shadow: -2px 2px 5px #58a6ff;
     }
     100% {
         transform: translateY(5px);
-        /* transform: rotate(5deg); */
+        transform: rotate(-5deg);
         transition: all 2s;
         box-shadow: 2px -2px 5px #58a6ff;
-    }}
+    }
+}
     
 
     .hero-content{
