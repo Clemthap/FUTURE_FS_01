@@ -185,3 +185,26 @@ function rotateSubtitle() {
 document.addEventListener('DOMContentLoaded', function() {
     rotateSubtitle();
 });
+
+// Elementary important staff
+function changename(){
+    let curName = document.getElementsByClassName("logo").textContent;
+    curName = "Clement";
+    curName.color = "red";
+}
+
+changename();
+
+document.addEventListener("DOMContentLoaded", ()=> {
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const projects = document.querySelector(".project-card");
+    filterButtons.forEach(btn=> {
+        btn.addEventListener("click",()=> {
+            const category = btn.CDATA_SECTION_NODE.filter;
+            projects.forEach(project=>{
+                project.style.display = (category === "all" || project.dataset.category === category) ? "flex" : "none";
+            })
+        })
+    })
+    
+})
