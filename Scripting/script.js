@@ -272,3 +272,24 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.addEventListener("click", closeMenu);
     closeByLink.addEventListener("click", closeMenu);
 });
+
+
+// Get the button
+const topBtn = document.getElementById('btnTop');
+
+// Listen for scroll events
+window.addEventListener('scroll', function() {
+  // If scrolled down more than 100px, show button
+  if (window.scrollY > 100) {
+    topBtn.classList.add('visible');
+  } else {
+    // At the top (Home), hide button
+    topBtn.classList.remove('visible');
+  }
+});
+
+// Optional: smooth scroll to top when clicked
+topBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
