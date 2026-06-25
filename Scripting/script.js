@@ -170,7 +170,7 @@ function rotateSubtitle() {
     
     // Array of phrases to cycle through
     const phrases = [
-        'Full Stack Developer - Intern', 'BCom Student', 'Passionate FinTech Enthusiast'];
+        'Full Stack Developer - Intern', 'BCom Student', 'FinTech Enthusiast', 'Aspring Software Engineer'];
     
     let currentIndex = 0;
     

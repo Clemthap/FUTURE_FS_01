@@ -118,6 +118,28 @@ section{
     justify-content: center;
     font-size: 10px;
     gap: 4px;
+    color: #2563eb
+}
+.reachOut, .btnDownLoad {
+    color: transparent;
+}
+
+.reachOut button { 
+    animation: enlarge 4s ease-in-out infinite alternate both;
+}
+.reachOut button:hover {
+    background-color: #000;
+    color: #58a6ff;
+}
+@keyframes  enlarge {
+    0% {
+        box-shadow: 0px 0px 20px #2563eb;
+    }
+
+    100% {
+        box-shadow: 0px 0px 5px #2563eb;
+    }
+    
 }
 
 
@@ -312,13 +334,15 @@ section{
     
 }
 .project-card img {
+    box-sizing:border-box;
     min-width: 100px;
     max-height: 300px;
     border-radius: 5px;
     align-self: center;
     align-items: center;
+    opacity: 0.2;
 }
-.project-card p:nth-child(3){
+.project-card p:nth-last-child(1){
     color: #2563eb;
     text-align: center;
     padding: 0.2em;
@@ -327,12 +351,11 @@ section{
     opacity: 0.4;
     position: static;
     bottom: 0;
-    
-    
+    border-radius: 2px;
 }
-.project-card:hover {
-    background-color: #81817c;
-    color: #161b22;
+.project-card img:hover {
+    transform: scale(1.2);
+    transition: transform 300ms;
 }
 
 .project-filter {
@@ -349,6 +372,23 @@ section{
     background: #58a6ff;
     color: #fff;
     cursor: pointer;
+}
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.stack {
+    text-align: center;
+    padding: 2px 5px;
+    margin: 5px 2px;
+    background: #10378d;
+    color: #cad1de;
+    box-shadow: 0px 0px 10px #083ca3;
+}
+.stack:hover {
+    box-shadow: 0px 0px 15px #616670 ;
+    border-radius: 5px;
 }
 
 /* contact section */
