@@ -17,37 +17,37 @@
     </script>
     <link rel="stylesheet" href="/styling/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <title>Clement Makofane | Portfolio</title>
     
 </head>
-<body class="top">
+<body class="top" id="body">
     <header class="header">
-
         <nav class="navbar show-menu">
-            
-            <div class="logo">
-                Thapelo
-            </div>
-            <!-- <div id="clock-container">
-                <span id="time-display">Loading...</span>
-            </div> -->
-            <div class="clock-wrapper">
-                <div id="clock">
-                    <span id="hours">00</span>
-                    <span class="seperation">:</span>
-                    <span id="minutes">00</span>
-                    <span class="seperation">:</span>
-                    <span id="seconds">00</span>
-                    <span id="ampm">AM</span>
+            <div class="list">
+                <div class="logo">
+                    Clement <span class="logoSur">Makofane</span>
                 </div>
-                <div id="date-display">Loading...</div>
-                <!-- <div id="location-display">
+                <!-- <div id="clock-container">
+                    <span id="time-display">Loading...</span>
+                </div> -->
+                <div class="clock-wrapper">
+                    <div id="clock">
+                        <span id="hours">00</span>
+                        <span class="seperation">:</span>
+                        <span id="minutes">00</span>
+                        <span class="seperation">:</span>
+                        <span id="seconds">00</span>
+                        <span id="ampm">AM</span>
+                    </div>
+                    <div id="date-display">Loading...</div>
+                    <!-- <div id="location-display">
                     <span id="location-icon"><i class="fa-solid fa-location-dot"></i></span>
                     <span id="location-text">Detection your location</span>
                 </div> -->
-                <div id="timezone-display"></div>
-            </div>
-            <div class="list">
+                    <div id="timezone-display"></div>
+                </div>
+            
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -57,7 +57,9 @@
                 </ul>
                 <button class="nav-close"><i class="fas fa-xmark"></i></button>
             </div>
-             <button class="nav-Menu"><i class="fas fa-bars"></i></button>
+             <button class="navMenu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
@@ -122,13 +124,12 @@
     <section id="projects"aria-lavel="Projects">
         <h2 class="section-title">Projects</h2>
 
-        <!-- <div class="project-filter">
-            < <span>Categories&colon; </span> 
+        <div class="project-filter"> 
             <button data-filter="all">All</button>
             <button data-filter="web">Web</button>
             <button data-filter="research, data, data analytics">Data Analysis</button>
             <button data-filter="fullstack">Full Stack</button> 
-        </div> -->
+        </div>
 
         <div class="projects-grid">
 
@@ -142,7 +143,7 @@
                 </p> -->
                  
                 <img src="/images/pictures/image.png" alt="">
-               <p>Stack: JavaScript | HTML | CSS</p>
+               <p>Stack: JavaScript | HTML | CSS <br> version 7</p>
                 <!-- <p>Ongoing</p> -->
             </div>
 
@@ -307,7 +308,7 @@
         </p>
 
     </footer>
-    <script src="/Scripting/script.js"></script>
+    <script src="Scripting/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>

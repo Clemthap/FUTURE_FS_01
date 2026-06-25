@@ -235,69 +235,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+/* == MOBILE MENU TOGGLE == */
 
-//using JQuiery
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".navMenu");
+    const closeBtn = document.querySelector(".nav-close");
+    const sidebar = document.querySelector(".list");
+    const closeByLink = document.querySelector("nav-links");
 
-$(document).ready(function () {
-    // Mobile menu toggle
-    $(".nav-Menu").click(function(e) {
-        e.preventDefault();
-        $(".navbar").addClass("show-menu");
-    });
+    // Create overlay dynamically
+    const overlay = document.createElement("div");
+    overlay.classList.add("menu-overlay");
+    document.body.appendChild(overlay);
 
-    $(".nav-close").click(function(e) {
-        e.preventDefault();
-        $(".navbar").removeClass("show-menu");
-    });
-    
-    // Close menu 
-    $(".nav-links").click(function() {
-        $(".navbar").removeClass("show-menu");
-    });
-    $(document).click(function(e) {
-        if (!$(e.target).closest('.navbar, .nav-Menu').length && $(".navbar").hasClass("show-menu")) {
-            $(".navbar").removeClass("show-menu");
-        }
-    });
-    
-    $(".btnDownload").click(function() {
-        e.preventDefault();
-    })
+    function openMenu() {
+        sidebar.style.right = "0";
+        overlay.style.display = "block";
 
-    $("a[href^='#']").click(function (e) {
-        e.preventDefault();
-        
-        let target = $(this.hash);
-        
-        if (target.length) {
-            $("html, body").animate({
-                scrollTop: target.offset().top - 20
-            }, 700);
-        }
-    });
-    $(window).scroll( function () {
-        let scrollPos = $(document).scroTop();
 
-        $(".nav-links").each(function (){
-            let currentLink = $(this);
-            let section = $(currentLink.attr("href"));
-
-            if ( section.length && section.postion() .top <= scrollPos +100 && section.position().top + section.height() > scrollPos + 100)
-            {
-                $("nav-Links").removeClass("acitive-link");
-                currentLink.addClass("active-link");
-            }
-        });
-
-    });
-    function checkReveal() {
-        $(".reveal").each(function () {
-            let elementTop = $(this).offset().top;
-            let windowBottom = $(window).scrollTop() + $(window).height();
-            
-            if (windowBottom > elementTop + 50) {
-                $(this).addClass("revealed");
-            }
-        });
+        setTimeout(() => {
+            overlay.style.opacity = "0.5";
+        }, 10);
     }
+
+    function closeMenu() {
+        sidebar.style.right = "-100%";
+        overlay.style.opacity = "0";
+
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 300);
+    }
+
+    menuBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+    closeByLink.addEventListener("click", closeMenu);
 });
