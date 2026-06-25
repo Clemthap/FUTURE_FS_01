@@ -23,8 +23,8 @@
 <body class="top">
     <header class="header">
 
-        <nav class="navbar">
-
+        <nav class="navbar show-menu">
+            
             <div class="logo">
                 Thapelo
             </div>
@@ -47,17 +47,18 @@
                 </div> -->
                 <div id="timezone-display"></div>
             </div>
-
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
+            <div class="list">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="nav-close"><i class="fas fa-xmark"></i></button>
+            </div>
+             <button class="nav-Menu"><i class="fas fa-bars"></i></button>
         </nav>
-
     </header>
 
 
@@ -95,7 +96,6 @@
                         <i class="fa-solid fa-hat-cowboy"></i>
                     
                     </a>
-
                 </div>
 
                 <div class="hero-buttons">
@@ -308,5 +308,6 @@
 
     </footer>
     <script src="/Scripting/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>

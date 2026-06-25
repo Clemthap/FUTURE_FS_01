@@ -41,7 +41,13 @@ section{
     }
 } 
 
-/* hero section */
+
+/* navigation */
+.list {
+    display: flex;
+    align-items: center;
+}
+
 .section-title{
     text-align:center;
     margin-bottom:40px;
@@ -69,6 +75,7 @@ section{
     display:flex;
     gap:20px;
     list-style:none;
+    transition: 0.3s ease;
 }
 
 .nav-links a{
@@ -82,6 +89,19 @@ section{
     transform: translateY(-1.5px);
 }
 
+.nav-Menu,
+.nav-close{
+    display:none;
+    border:none;
+    cursor:pointer;
+    background:#fff;
+    color:#000;
+    padding:.7em;
+    border-radius:8px;
+}
+
+
+/* Hero Section */
 .hero{
     min-height:100vh;
     display:flex;
@@ -167,10 +187,18 @@ section{
 }
 
 .social-links i{
-    color:white;
+    color:#ffffff;
     font-size:2.5em;
-    margin-right:20px;
+    margin-right:1.5em;
+    transform: scale(0.8);
+    transition: transform 0.3s;
 }
+.social-links i:hover{
+    color: #2563eb;
+    transform: translateY(-8px);
+    transition: transform 1s;
+}
+
 .social-links a {
     color: transparent;
 }
@@ -322,12 +350,14 @@ footer{
     background:#161b22;
 }
 
-@media(max-width:768px){
+@media(max-width:860px){
     .hero {
         margin-top: -4em;
     }
     .logo {
-        display: none;
+        color: #10378d;
+        border-top: solid;
+        border-bottom: solid ;
     }
     .header {
         position:sticky;
@@ -335,12 +365,83 @@ footer{
         z-index:1000;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .navbar {
-        border-bottom-left-radius: 50%;
-        border-bottom-right-radius: 50%;
-        padding-bottom: 0.6em ;
-        border-bottom:solid #10378d 0.5em;
+    .nav-links {
+        margin-bottom:  20px;
     }
+    .nav-links li {
+        transition:  0.8s ease;
+    }
+    .nav-links li:hover {
+        transform: scale(1.5);
+        transition: 2s ease;
+        background-color: #10378d;
+        box-shadow: 0px 0px 20px #58a6ff;
+        border-radius: 5px;
+        padding: 2px;
+
+    }
+
+    .navbar {
+        display: flex;
+        position:fixed;
+        top: 10px;
+        right: 10px;
+        width: 200px;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        transition: 0.4s ease;
+        z-index: 1000;
+        /* border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%; */
+        /* padding-bottom: 0.6em ; */
+        animation: borderLine 4s infinite alternate both;
+    }
+    @keyframes borderLine {
+        from {
+            border-bottom:solid #10378d 0.5em;
+        }
+        to {
+            border-bottom:solid #f7f7f7 0.5em;
+        }
+    }
+    .nav-Menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-close {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .show-menu  {
+        right: 0;
+    }
+
+     /* For clock */
+    .clock-wrapper {
+        flex: 1;
+        padding: 2px;
+        justify-content: left;
+        font-size: 10px;
+    }
+
+    #date-display, #location-display, #timezone-display  {
+        display: none;
+    }
+
+    .nav-links{
+        flex: 1;
+        justify-content:center;
+    }
+
     /* .navbar:hover {
         background-color: #58a6ff;
         opacity: 0.9;
@@ -374,19 +475,19 @@ footer{
         display: none;
     }
     @keyframes float {
-    0% {
-        transform: translateY(-5px);
-        transform: rotate(5deg);
-        transition: all 1s;
-        box-shadow: -2px 2px 5px #58a6ff;
+        0% {
+            transform: translateY(-5px);
+            transform: rotate(5deg);
+            transition: all 1s;
+            box-shadow: -2px 2px 5px #58a6ff;
+        }
+        100% {
+            transform: translateY(5px);
+            transform: rotate(-5deg);
+            transition: all 2s;
+            box-shadow: 2px -2px 5px #58a6ff;
+        }
     }
-    100% {
-        transform: translateY(5px);
-        transform: rotate(-5deg);
-        transition: all 2s;
-        box-shadow: 2px -2px 5px #58a6ff;
-    }
-}
     
 
     .hero-content{
@@ -394,31 +495,7 @@ footer{
         text-align:center;
     }
 
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
     #btnBot, #btnTop{
-        display: none;
-    }
-
-    /* For clock */
-    .clock-wrapper {
-    display: flex;
-    font-size: 10px;
-    gap: 2px;
-    padding: 0.2em 0.5em;
-    margin: 0em;
-    border: 1px solid #2563eb;
-    background-color: #0c1b3a;
-    border-radius: 2px;
-    }
-    #date-display, #location-display, #timezone-display  {
         display: none;
     }
 }
