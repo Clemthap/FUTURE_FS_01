@@ -186,25 +186,51 @@ document.addEventListener('DOMContentLoaded', function() {
     rotateSubtitle();
 });
 
+
 // Elementary important staff
 function changename(){
     let curName = document.getElementsByClassName("logo").textContent;
     curName = "Clement";
     curName.color = "red";
 }
-
 changename();
 
-document.addEventListener("DOMContentLoaded", ()=> {
-    const filterButtons = document.querySelectorAll("[data-filter]");
-    const projects = document.querySelector(".project-card");
-    filterButtons.forEach(btn=> {
-        btn.addEventListener("click",()=> {
-            const category = btn.CDATA_SECTION_NODE.filter;
-            projects.forEach(project=>{
-                project.style.display = (category === "all" || project.dataset.category === category) ? "flex" : "none";
-            })
-        })
-    })
+
+//filtering the projects
+document.addEventListener("DOMContentLoaded", () => {
+    // const filterButtons = document.querySelectorAll("[data-filter]");
+    // const projects = document.querySelectorAll(".project-card");
     
-})
+    // filterButtons.forEach(btn => {
+    //     btn.addEventListener("click", () => {
+    //         const category = btn.dataset.filter;
+    //         projects.forEach(project => {
+    //             // Fixed the display logic
+    //             if (category === "all" || project.dataset.category === category) {
+    //                 project.style.display = "block";
+    //             } else {
+    //                 project.style.display = "none";
+    //             }
+    //         });
+    //     });
+    // });
+    // getting info from a form
+    const contactForm = document.getElementById("contactFrom");
+    if(contactForm){
+        contactForm.addEventListener("submit", function(e){
+            e.preventDefault();
+        
+            emailjs.send("service_ywiwpxe", "template_0jj1jtw",  {
+                from_name:document.getElementById("name").value,
+                from_email:document.getElementById("email").value,
+                message:document.getElementById("message").value
+            }).then(()=> {
+                document.getElementById("form-status").textContent = "Message send successfully";
+                contactForm.reset();
+            }).catch((err)=>{
+                document.getElementById("form-status").textContent  = "Failed to send message.";
+                console.log(err);
+            });
+        });
+    }
+});

@@ -276,6 +276,22 @@ section{
     color: #161b22;
 }
 
+.project-filter {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.project-filter button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #58a6ff;
+    color: #fff;
+    cursor: pointer;
+}
+
 /* contact section */
 form{
     max-width:600px;
